@@ -1,20 +1,28 @@
+document.addEventListener('DOMContentLoaded', function() {
 	var geo = navigator.geolocation;
 	var opciones = {};
 
-	function geoError() {
-		console.log("no puedo saber donde estas!");
-	}
+	document.getElementsByTagName('a')[0].addEventListener('click', function() {
 
-	function geoExito(posicion) {
-		var lat = posicion.coords.latitude;
-		var lon = posicion.coords.longitude;
-		var mapa = new Image();
-			mapa.src = "http://maps.googleapis.com/maps/api/staticmap?center="+
-						lat + "," + lon +
-						"&zoom=13&size=600x300&sensor=false&markers=color:blue";
-	}
+		function geoError() {
+			alert("no puedo saber donde estas!");
+		}
 
-	// getCurrentPosition recibe 3 parametros. Si sale todo
-	// bien se ejecuta geoExito pasando el param 'posicion'
+		function geoExito(posicion) {
+			var lat = posicion.coords.latitude;
+			var lon = posicion.coords.longitude;
+			var mapa = new Image();
+				mapa.src = "http://maps.googleapis.com/maps/api/staticmap?center="+
+							lat + "," + lon +
+							"&zoom=15&size=600x300&sensor=false";
 
-	geo.getCurrentPosition(geoExito, geoError, opciones);
+			document.getElementById('geo').appendChild(mapa);
+		}
+
+		// getCurrentPosition recibe 3 parametros. Si sale todo
+		// bien se ejecuta geoExito pasando el param 'posicion'
+
+		geo.getCurrentPosition(geoExito, geoError, opciones);
+		this.style.display = "none";
+	});
+});
