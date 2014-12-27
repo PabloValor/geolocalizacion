@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
 							"&zoom=15&size=600x300&sensor=false";
 
 			document.getElementById('geo').appendChild(mapa);
+
+			obtenerGeoInformacion(lat,lon);
 		}
 
 		// getCurrentPosition recibe 3 parametros. Si sale todo

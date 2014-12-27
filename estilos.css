@@ -18,6 +18,9 @@ body {
 	background: #7B1E7A;
 	font-family: 'Lato', cursive;
 }
+#clima img {
+	width: 28px;
+}
 #geo {
 	display: table;
 	margin: 0 auto;
@@ -29,6 +32,12 @@ h1 {
 	text-shadow: 5px 5px black;
 	letter-spacing: 9px;
 }
+h3 {
+	color: white;
+	text-align: center;
+	text-decoration: underline;
+}
 p {
+	color: white;
 	text-align: center; 
 }
